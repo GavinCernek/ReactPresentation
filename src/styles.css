@@ -1,0 +1,258 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: sans-serif;
+}
+
+main {
+	flex: 1;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 16px;
+	max-width: 120rem;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	user-select: none;
+}
+
+.site-header {
+	display: flex;
+	align-items: center;
+	background-color: #4169e1;
+	min-height: 64px;
+	box-shadow: 0 0 30px 3px hsla(0, 0%, 0%, 0.25);
+}
+
+.site-header .container {
+	width: 100%;
+	max-width: 90rem;
+}
+
+.header__body {
+	display: flex;
+	align-items: center;
+}
+
+.header__logo-link {
+	color: #fff;
+	text-decoration: none;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.header__search {
+	display: flex;
+	justify-content: center;
+	flex: 1;
+}
+
+.header__search-form {
+	position: relative;
+	width: 100%;
+	max-width: 400px;
+}
+
+.header__search-label {
+	display: flex;
+}
+
+.header__search-input {
+	padding: 10px;
+	width: 100%;
+	min-height: 35px;
+	background-color: #ffffff;
+	border: none;
+	border-radius: 5px;
+}
+
+.header__search-submit {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.header__search-submit-icon {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+}
+
+.main-navigation__list {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.main-navigation__item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.main-navigation__link {
+	color: #ffffff;
+}
+
+.site-main .container {
+	margin-top: 3em;
+	margin-bottom: 3em;
+	max-width: 90rem;
+}
+
+.our-people {
+	margin: 0 auto;
+	max-width: 850px;
+}
+
+.our-people__title {
+	text-align: center;
+}
+
+.our-people__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 100px;
+}
+
+.our-people__generate {
+	padding: 1em 1.75em;
+	color: #ffffff;
+	min-height: 54px;
+	background-color: #4169e1;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	transition: background-color 150ms ease-in-out;
+	cursor: pointer;
+}
+
+.our-people__generate:hover,
+.our-people__generate:focus {
+	background-color: #222;
+}
+
+.our-people__select {
+	padding: 1em 10px;
+	width: 150px;
+	min-height: 54px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+.our-people__wrapper {
+	margin-top: 2em;
+}
+
+.our-people__list {
+	display: flex;
+	align-items: stretch;
+	flex-wrap: wrap;
+	margin: 0 -10px;
+	padding: 0;
+	list-style-type: none;
+}
+
+.our-people__item {
+	margin: 0 10px 20px;
+	flex-basis: calc(33.33% - 20px);
+	width: calc(33.33% - 20px);
+}
+
+.our-people__card {
+	position: relative;
+	height: 100%;
+	background-color: #ebebeb;
+	border-radius: 15px;
+	box-shadow: 0 0 10px 3px hsla(0, 0%, 0%, 0.25);
+}
+
+.our-people__favorite {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.our-people__favorite-icon {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	fill: #ffd700;
+	vertical-align: middle;
+}
+
+.our-people__image {
+	width: 100%;
+	max-height: 150px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	object-fit: cover;
+}
+
+.our-people__information {
+	padding: 10px 20px;
+}
+
+.our-people__name,
+.our-people__cellphone,
+.our-people__email {
+	margin: 10px 0;
+	word-break: break-all;
+}
+
+.site-footer {
+	display: flex;
+	align-items: center;
+	min-height: 45px;
+	background-color: #ededed;
+	box-shadow: 0 0 20px 3px hsla(0, 0%, 0%, 0.15);
+}
+
+.site-footer .container {
+	max-width: 90rem;
+}
+
+.footer__body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer__copyright {
+	margin: 0;
+	color: #222;
+}
