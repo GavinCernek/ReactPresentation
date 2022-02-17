@@ -11,7 +11,15 @@ footerCopyright.innerHTML =
 const RANDOM_USER_API_URL = 'https://randomuser.me/api/?results=20&nat=us';
 
 const randomUsers = new Map();
-const favoriteRandomUsers = new Map();
+let favoriteRandomUsers;
+
+const storedFavoriteRandomUsers = localStorage.getItem('favoriteRandomUsers');
+
+if (storedFavoriteRandomUsers) {
+	favoriteRandomUsers = new Map(JSON.parse(storedFavoriteRandomUsers));
+} else {
+	favoriteRandomUsers = new Map();
+}
 
 const fetchRandomUser = async () => {
 	const response = await fetch(RANDOM_USER_API_URL);
@@ -36,6 +44,8 @@ const updateFavoriteButton = (favoriteButton, user) => {
 		favoriteButton.ariaLabel = 'Unfavorite user';
 		favoriteButton.innerHTML = `<svg class="our-people__favorite-icon" aria-hidden="true" focusable="false"><use xlink:href="#star-full-icon"></use></svg>`;
 	}
+
+	localStorage.setItem('favoriteRandomUsers', JSON.stringify([...favoriteRandomUsers]));
 };
 
 const createRandomUser = (user) => {
@@ -140,7 +150,6 @@ randomUsersFilter.addEventListener('change', (e) => {
 
 randomUsersGenerate.addEventListener('click', async () => {
 	randomUsers.clear();
-	favoriteRandomUsers.clear();
 
 	const randomUserResponse = await fetchRandomUser();
 
