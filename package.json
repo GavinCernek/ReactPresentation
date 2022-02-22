@@ -1,12 +1,17 @@
 {
 	"devDependencies": {
+		"@parcel/transformer-sass": "^2.3.1",
 		"parcel": "^2.3.1"
 	},
 	"scripts": {
 		"start": "npx parcel src/index.html"
 	},
 	"dependencies": {
+		"@fontsource/maven-pro": "^4.5.4",
+		"@reach/listbox": "^0.16.2",
+		"process": "^0.11.10",
 		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
+		"react-dom": "^17.0.2",
+		"sass": "^1.49.8"
 	}
 }

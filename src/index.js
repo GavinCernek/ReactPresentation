@@ -1,5 +1,3 @@
-const searchForm = document.getElementById('header-search-form');
-const searchBar = document.getElementById('header-search-input');
 const randomUsersGenerate = document.querySelector('.our-people__generate');
 const randomUsersFilter = document.getElementById('random-users-filter');
 const randomUsersList = document.getElementById('random-users');
@@ -133,32 +131,36 @@ const generateFavoriteRandomUsers = () => {
 	}
 };
 
-randomUsersFilter.addEventListener('change', (e) => {
-	switch (e.target.value) {
-		case 'all':
-			generateAllRandomUsers();
-			return;
+if (randomUsersFilter) {
+	randomUsersFilter.addEventListener('change', (e) => {
+		switch (e.target.value) {
+			case 'all':
+				generateAllRandomUsers();
+				return;
 
-		case 'favorites':
-			generateFavoriteRandomUsers();
-			return;
+			case 'favorites':
+				generateFavoriteRandomUsers();
+				return;
 
-		default:
-			return;
-	}
-});
+			default:
+				return;
+		}
+	});
+}
 
-randomUsersGenerate.addEventListener('click', async () => {
-	randomUsers.clear();
+if (randomUsersGenerate) {
+	randomUsersGenerate.addEventListener('click', async () => {
+		randomUsers.clear();
 
-	const randomUserResponse = await fetchRandomUser();
+		const randomUserResponse = await fetchRandomUser();
 
-	randomUsersList.innerHTML = '';
+		randomUsersList.innerHTML = '';
 
-	for (const user of randomUserResponse.results) {
-		createRandomUser(user);
-	}
-});
+		for (const user of randomUserResponse.results) {
+			createRandomUser(user);
+		}
+	});
+}
 
 const initOurPeople = async () => {
 	const randomUserResponse = await fetchRandomUser();

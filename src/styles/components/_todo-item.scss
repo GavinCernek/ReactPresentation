@@ -1,0 +1,64 @@
+@use '../utils' as *;
+
+.todo-item {
+	margin: 0 10px 20px;
+	padding: 10px 20px;
+	flex-basis: calc(33.33% - 20px);
+	width: calc(33.33% - 20px);
+	border: 2px solid $grey-light;
+	border-radius: 6px;
+}
+
+.todo-item__title {
+	margin-bottom: 15px;
+	font-size: 1.5rem;
+}
+
+.todo-item__importance {
+	[data-reach-listbox-button] {
+		padding: 0.75em 1em;
+		min-width: 185px;
+		border-radius: 6px;
+		cursor: pointer;
+	}
+
+	[data-reach-listbox-arrow] {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform 150ms ease-in-out;
+
+		&[data-expanded] {
+			transform: rotate(180deg);
+		}
+	}
+
+	[data-reach-listbox-popover] {
+		margin-top: 5px;
+		border-radius: 6px;
+
+		&:focus-within {
+			box-shadow: none;
+			outline: 0;
+		}
+	}
+
+	[data-reach-listbox-option] {
+		cursor: pointer;
+
+		&[data-current-selected] {
+			color: #037dba;
+			background-color: #c6efff;
+		}
+
+		&[data-current-nav] {
+			color: #333;
+			background-color: hsla(0, 0%, 80%, 0.35);
+		}
+	}
+}
+
+.todo-item__importance-icon {
+	width: 20px;
+	height: 20px;
+}
