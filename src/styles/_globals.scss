@@ -22,3 +22,8 @@ textarea,
 select {
 	font: inherit;
 }
+
+button {
+	transition: background-color 150ms ease-in-out;
+	cursor: pointer;
+}

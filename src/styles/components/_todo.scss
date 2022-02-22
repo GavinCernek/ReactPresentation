@@ -1,8 +1,42 @@
 @use '../utils' as *;
 
-.todo__title {
+.todo__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 	border-bottom: 2px solid $grey-light;
+}
+
+.todo__title {
 	font-size: 3rem;
+}
+
+.todo__sort {
+	display: flex;
+	align-items: center;
+}
+
+.todo__sort-text {
+	margin-right: 16px;
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.todo__wrapper {
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.todo__rail {
+	align-self: flex-start;
+	margin-right: 32px;
+	padding: 15px;
+	border: 2px solid $grey-light;
+	border-radius: 6px;
+}
+
+.todo__listing {
+	flex: 1;
 }

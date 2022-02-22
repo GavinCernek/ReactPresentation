@@ -14,51 +14,41 @@
 	font-size: 1.5rem;
 }
 
-.todo-item__importance {
-	[data-reach-listbox-button] {
-		padding: 0.75em 1em;
-		min-width: 185px;
-		border-radius: 6px;
-		cursor: pointer;
-	}
+.todo-item__actions {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
 
-	[data-reach-listbox-arrow] {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: transform 150ms ease-in-out;
+.todo-item__completed,
+.todo-item__remove {
+	display: inline-block;
+	padding: 0.75em 1.25em;
+	width: 100%;
+	border-radius: 6px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+}
 
-		&[data-expanded] {
-			transform: rotate(180deg);
-		}
-	}
+.todo-item__completed {
+	color: $green-mid;
+	background-color: $green-light;
+	border: 2px solid $green-mid;
 
-	[data-reach-listbox-popover] {
-		margin-top: 5px;
-		border-radius: 6px;
-
-		&:focus-within {
-			box-shadow: none;
-			outline: 0;
-		}
-	}
-
-	[data-reach-listbox-option] {
-		cursor: pointer;
-
-		&[data-current-selected] {
-			color: #037dba;
-			background-color: #c6efff;
-		}
-
-		&[data-current-nav] {
-			color: #333;
-			background-color: hsla(0, 0%, 80%, 0.35);
-		}
+	&:hover,
+	&:focus-visible {
+		background-color: darken($green-light, 10%);
 	}
 }
 
-.todo-item__importance-icon {
-	width: 20px;
-	height: 20px;
+.todo-item__remove {
+	color: $red-mid;
+	background-color: $red-light;
+	border: 2px solid $red-mid;
+
+	&:hover,
+	&:focus-visible {
+		background-color: darken($red-light, 10%);
+	}
 }

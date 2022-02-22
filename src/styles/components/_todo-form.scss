@@ -1,0 +1,43 @@
+@use '../utils' as *;
+
+.todo-form {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.todo-form__title {
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid $grey-light;
+	font-size: 1.5rem;
+}
+
+.todo-form__label {
+	display: flex;
+}
+
+.todo-form__input {
+	display: block;
+	margin-bottom: 20px;
+	padding: 0.75em 1em;
+	width: 100%;
+	border: 1px solid $grey-light;
+	border-radius: 6px;
+}
+
+.todo-form__submit {
+	display: block;
+	margin-top: auto;
+	padding: 0.75em 1.25em;
+	width: 100%;
+	background-color: transparent;
+	border: 2px solid $grey-light;
+	border-radius: 6px;
+	text-transform: uppercase;
+
+	&:hover,
+	&:focus-visible {
+		background-color: darken($grey-light, 10%);
+	}
+}

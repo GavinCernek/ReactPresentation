@@ -3,13 +3,23 @@ import { Listbox, ListboxOption } from '@reach/listbox';
 import DownChevron from './svg/DownChevron';
 import '@reach/listbox/styles.css';
 
-const TodoImportanceDropdown = ({ importance }) => {
+const TodoImportanceDropdown = ({ isSort, importance, changeImportance }) => {
 	return (
-		<Listbox value={importance} arrow={<DownChevron className="todo-item__importance-icon" />}>
-			<ListboxOption value="Not Important">Not Important</ListboxOption>
-			<ListboxOption value="Important">Important</ListboxOption>
-			<ListboxOption value="Very Important">Very Important</ListboxOption>
-		</Listbox>
+		<div className="todo-dropdown">
+			<Listbox
+				value={importance}
+				onChange={changeImportance}
+				arrow={<DownChevron className="todo-dropdown__icon" />}
+			>
+				{isSort ? (
+					<ListboxOption value="Sort By Importance">Sort By Importance</ListboxOption>
+				) : null}
+
+				<ListboxOption value="Not Important">Not Important</ListboxOption>
+				<ListboxOption value="Important">Important</ListboxOption>
+				<ListboxOption value="Very Important">Very Important</ListboxOption>
+			</Listbox>
+		</div>
 	);
 };
 
